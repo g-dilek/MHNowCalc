@@ -2,7 +2,7 @@
 function calculateWaitTime(hitPoints, timePerPoint) {
   let secondsTotal = hitPoints * timePerPoint;
   let minutesTotal = Math.floor(secondsTotal / 60);
-  let secondsRemaining = secondsTotal % 60;
+  let secondsRemaining = Math.round(secondsTotal % 60); // Round to nearest whole number
 
   return {
     minutes: minutesTotal,
@@ -24,29 +24,28 @@ function handleCalculation() {
     }
   }
 
-  let result = calculateWaitTime(hitPoints, timePerPoint);
+  // Only perform calculation if hitPoints and timePerPoint are valid
+  if (!isNaN(hitPoints) && timePerPoint) {
+    let result = calculateWaitTime(hitPoints, timePerPoint);
 
-  // Show the result section
-  let resultSection = document.getElementById("result");
-  resultSection.innerText = `You need to wait ${result.minutes} minutes and ${result.seconds} seconds to recover ${hitPoints} HP.`;
-  resultSection.style.display = "block"; // Display the result section
-}
-
-// Function to enable or disable the Calculate button based on input
-function validateInput() {
-  let hitPoints = document.getElementById("hitPoints").value;
-  let calculateButton = document.getElementById("calculateButton");
-
-  // Enable the button if the input is between 1 and 1000, otherwise disable it
-  if (hitPoints >= 1 && hitPoints <= 1000) {
-    calculateButton.disabled = false;
+    // Show the result section
+    let resultSection = document.getElementById("result");
+    resultSection.innerText = `You need to wait ${result.minutes} minutes and ${result.seconds} seconds to recover ${hitPoints} HP.`;
+    resultSection.style.display = "block"; // Display the result section
   } else {
-    calculateButton.disabled = true;
+    // Hide the result section if input is invalid
+    document.getElementById("result").style.display = "none";
   }
 }
 
+// Function to handle input and update result
+function updateResult() {
+  handleCalculation();
+}
+
 // Attach event listeners
-document.getElementById("hitPoints").addEventListener("input", validateInput);
-document
-  .getElementById("calculateButton")
-  .addEventListener("click", handleCalculation);
+document.getElementById("hitPoints").addEventListener("input", updateResult);
+
+document.querySelectorAll("input[name='healthBoost']").forEach((radio) => {
+  radio.addEventListener("change", updateResult);
+});
