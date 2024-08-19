@@ -200,13 +200,19 @@ footer {
   }
 
   #image {
-    order: 1;
+    order: 3; /* Move image to the end */
     margin-bottom: 2rem; /* Space below image */
   }
 
   form {
+    order: 1; /* Move form to the top */
     flex: none;
     width: 100%;
+  }
+
+  #result {
+    order: 2; /* Move result section to be below the form */
+    font-size: 1.2rem; /* Smaller font size for mobile */
   }
 
   header h1 {
@@ -227,9 +233,5 @@ footer {
 
   button {
     font-size: 0.9rem; /* Smaller font size for mobile */
-  }
-
-  #result {
-    font-size: 1.2rem; /* Smaller font size for mobile */
   }
 }
