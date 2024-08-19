@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Monster Hunter Now - HP Wait Time Calculator</title>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Link to the CSS file -->
+    <script src="script.js" defer></script>
+    <!-- Link to the JS file -->
+  </head>
+  <body>
+    <header>
+      <h1>Monster Hunter Now</h1>
+      <h2>HP Wait Time Calculator</h2>
+    </header>
+
+    <main>
+      <div class="container">
+        <section id="image">
+          <img
+            src="monster-hunter-now-joystick-1024x576.webp"
+            alt="Monster Hunter Now logo"
+          />
+        </section>
+
+        <form id="calculatorForm">
+          <label for="hitPoints">Enter HP to recover:</label>
+          <input type="number" id="hitPoints" min="0" placeholder="e.g., 100" />
+
+          <fieldset id="healthBoosts">
+            <legend>Select Health Boost Level:</legend>
+            <label>
+              <input type="radio" name="healthBoost" value="36" checked />
+              NO Health Boost
+              <span class="radio-description"
+                >(36 sec per point, 100hp max)</span
+              >
+            </label>
+            <label>
+              <input type="radio" name="healthBoost" value="32.7" />
+              Health Boost 1
+              <span class="radio-description"
+                >(32.7 sec per point, 110hp max)</span
+              >
+            </label>
+            <label>
+              <input type="radio" name="healthBoost" value="30" />
+              Health Boost 2
+              <span class="radio-description"
+                >(30 sec per point, 120hp max)</span
+              >
+            </label>
+            <label>
+              <input type="radio" name="healthBoost" value="27.7" />
+              Health Boost 3
+              <span class="radio-description"
+                >(27.7 sec per point, 130hp max)</span
+              >
+            </label>
+            <label>
+              <input type="radio" name="healthBoost" value="25.7" />
+              Health Boost 4
+              <span class="radio-description"
+                >(25.7 sec per point, 140hp max)</span
+              >
+            </label>
+            <label>
+              <input type="radio" name="healthBoost" value="24" />
+              Health Boost 5
+              <span class="radio-description"
+                >(24 sec per point, 150hp max)</span
+              >
+            </label>
+          </fieldset>
+
+          <button type="button" id="calculateButton" disabled>Calculate</button>
+        </form>
+      </div>
+
+      <section id="result">
+        <!-- Calculation result will be displayed here -->
+      </section>
+    </main>
+
+    <footer>
+      <p></p>
+
+      <script src="https://storage.ko-fi.com/cdn/scripts/overlay-widget.js"></script>
+      <script>
+        kofiWidgetOverlay.draw("gdilek", {
+          type: "floating-chat",
+          "floating-chat.donateButton.text": "Support me",
+          "floating-chat.donateButton.background-color": "#ffffff",
+          "floating-chat.donateButton.text-color": "#323842",
+        });
+      </script>
+    </footer>
+  </body>
+</html>

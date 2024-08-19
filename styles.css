@@ -1,0 +1,193 @@
+/* General Styles */
+html,
+body {
+  height: 100%; /* Ensure html and body cover the full viewport height */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+body {
+  font-family: "Roboto", sans-serif; /* Modern font for body text */
+  background: linear-gradient(
+    to right,
+    #f5f7fa,
+    #c3cfe2
+  ); /* Light gradient background */
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensure the body covers the full viewport height */
+}
+
+header {
+  background: linear-gradient(to right, #007bff, #00d2ff); /* Blue gradient */
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+  font-size: 4rem; /* Adjusted font size for balance */
+  margin: 0;
+  letter-spacing: 1px; /* Reduced letter spacing for a tighter look */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Subtle text shadow for depth */
+}
+
+header h2 {
+  font-size: 2.5rem; /* Adjusted font size for better contrast with h1 */
+  margin-top: 0rem; /* Reduced space between title and subtitle */
+  font-weight: 400; /* Regular weight for the subtitle */
+}
+
+main {
+  padding: 2rem;
+  max-width: 1200px; /* Increased max-width for larger screens */
+  margin: 2rem auto; /* Center with some space from the top */
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  flex: 1; /* Allows main to grow and push footer to the bottom */
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+#image {
+  flex: 1;
+  text-align: center;
+}
+
+#image img {
+  width: 100%;
+  height: auto;
+  max-width: 600px;
+  display: block;
+  margin: 0 auto;
+}
+
+form {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+label {
+  font-size: 1.2rem;
+  font-weight: 700; /* Bold label text */
+  display: flex;
+  align-items: center; /* Align items center for better vertical alignment */
+  gap: 1rem; /* Space between radio button and text */
+}
+
+input[type="radio"] {
+  width: 1.5rem; /* Increase radio button size */
+  height: 1.5rem; /* Increase radio button size */
+  accent-color: #007bff; /* Change color of radio button */
+}
+
+.radio-description {
+  font-size: 0.9rem; /* Smaller font size for the description */
+  color: #666; /* Slightly lighter color for the description */
+  margin-top: 0.5rem; /* Space between label text and description */
+}
+
+input[type="number"] {
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 2px solid #007bff;
+  border-radius: 4px;
+  transition: border-color 0.3s ease;
+}
+
+input[type="number"]:focus {
+  border-color: #00d2ff; /* Light blue border on focus */
+  outline: none;
+}
+
+button {
+  padding: 0.75rem;
+  background: linear-gradient(
+    to right,
+    #28a745,
+    #00d2ff
+  ); /* Green to light blue gradient */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:disabled {
+  background: #cccccc; /* Gray background for disabled button */
+  cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
+  background: linear-gradient(
+    to right,
+    #218838,
+    #00aaff
+  ); /* Darker gradient on hover */
+  transform: scale(1.02); /* Slightly scale up on hover */
+}
+
+/* Styles for the health boost fieldset */
+fieldset {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 1rem;
+  background-color: #f9f9f9;
+}
+
+legend {
+  font-size: 1.4rem;
+  font-weight: 700;
+  padding: 0 0.5rem;
+}
+
+#healthBoosts {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+#healthBoosts label {
+  display: flex;
+  align-items: center; /* Align items center for better vertical alignment */
+  gap: 1rem; /* Space between radio button and text */
+  font-size: 1rem;
+}
+
+#result {
+  display: none;
+  margin-top: 1rem;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #f1f1f1;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+/* Footer styles */
+footer {
+  text-align: center;
+  padding: 2rem; /* Ensure footer padding is consistent */
+  background: linear-gradient(to right, #007bff, #00d2ff); /* Bluish gradient */
+  color: white;
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+  height: 20vh; /* Set footer height to 20% of the viewport height */
+  width: 100%; /* Ensure it spans the full width */
+  margin: 0; /* Remove any margin to avoid extra space */
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
